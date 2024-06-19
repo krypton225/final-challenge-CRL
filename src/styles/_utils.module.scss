@@ -104,3 +104,11 @@ body {
         display: none;
     }
 }
+
+[data-bg="dark"] {
+    background-color: var(--main-500);
+}
+
+a:focus-visible {
+    outline: 1px solid var(--secondary-500);
+}
