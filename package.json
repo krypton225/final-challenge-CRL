@@ -1,0 +1,42 @@
+{
+  "name": "final-challenge-crl",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This repo for just training in figma template challenge.",
+  "markdown": "github",
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://opensource.org/license/mit/"
+    }
+  ],
+  "author": "Khaled Mohamed <k.mohamed.11.98@gmail.com> (https://github.com/krypton225)",
+  "contributors": [
+    "Khaled Mohamed"
+  ],
+  "bugs": {
+    "url": "https://github.com/krypton225/final-challenge-CRL/issues"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SCSS",
+    "Vite"
+  ],
+  "repository": {
+    "url": "https://github.com/krypton225/final-challenge-CRL",
+    "type": "git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.77.6",
+    "sass-pire": "^1.11.6",
+    "vite": "^5.2.0"
+  }
+}
