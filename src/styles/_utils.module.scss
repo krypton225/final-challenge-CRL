@@ -1,0 +1,106 @@
+@use "../../node_modules/sass-pire/src/sass-pire.scss" as *;
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --hue: 225;
+    --saturation: 7%;
+    --lightness: 47%;
+
+    /* #6F737F */
+    --main-100: hsl(var(--hue), var(--saturation), var(--lightness));
+
+    /* #3B4050 */
+    --main-500: hsl(calc(var(--hue) + 1), calc(var(--saturation) + 8%), calc(var(--lightness) - 20%));
+
+    /* #2E323F */
+    --main-900: hsl(calc(var(--hue) + 1), calc(var(--saturation) + 9%), calc(var(--lightness) - 26%));
+
+    /* #FFFFFF */
+    --white-100: hsl(0, 0%, 100%);
+
+    /* #A59678 */
+    --secondary-500: hsl(calc(var(--hue) - 185), calc(var(--saturation) + 13%), calc(var(--lightness) + 9%));
+
+    --overlay-bg: hsl(0deg 0% 0% / 59%);
+
+    --max-container: 1200px;
+    --border-radius-100: 100px;
+}
+
+::-moz-selection {
+    background-color: var(--main-500);
+    color: var(--white-100);
+}
+
+::selection {
+    background-color: var(--main-500);
+    color: var(--white-100);
+}
+
+[data-style="container"] {
+    margin-inline: 1.25rem;
+
+    @include mq-gen(min, w, xs) {
+        margin-inline: 1.5rem;
+    }
+
+    @include mq-gen(min, w, sm-max) {
+        margin-inline: 1.8rem;
+    }
+
+    @include mq-gen(min, w, lg) {
+        max-width: var(--max-container);
+        margin-inline: auto;
+    }
+}
+
+[data-style="btn"] {
+    padding: 0.4rem 1.5rem;
+    border-radius: var(--border-radius-100);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: clamped(15px, 17px, 375px, 1400px);
+    color: var(--white-100);
+    background-color: var(--secondary-500);
+}
+
+[data-style="toggler"] {
+    $one-side: 22;
+
+    width: calc(px-to-rem($one-side) + 0.25rem);
+    height: px-to-rem($one-side);
+    padding: px-to-rem(2);
+    @include flex-between-center(col);
+    cursor: pointer;
+
+    &:hover {
+        $rotate-degree: 12deg;
+
+        [data-style="toggler-line"]:first-child {
+            @include rotate(-$rotate-degree);
+            perspective-origin: top right;
+            transform-origin: top right;
+        }
+
+        [data-style="toggler-line"]:last-child {
+            @include rotate($rotate-degree);
+            perspective-origin: top right;
+            transform-origin: top right;
+        }
+    }
+
+    [data-style="toggler-line"] {
+        width: 100%;
+        height: px-to-rem(2);
+        display: block;
+        background-color: var(--white-100);
+        transition: all 0.33s ease-in-out;
+    }
+
+    @include mq-gen(min, w, xs) {
+        display: none;
+    }
+}

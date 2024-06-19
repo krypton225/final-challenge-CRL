@@ -1,0 +1,65 @@
+@use "../../node_modules/sass-pire/src/sass-pire.scss" as *;
+
+.app-header {
+    position: relative;
+    background-color: var(--main-900);
+
+    .nav-app-header {
+        padding-block: 1.6rem;
+        @include flex-between-center;
+
+        .menu-header {
+            @include flex-fstart-center;
+            gap: 2rem;
+            transition: all 0.33s ease-in-out;
+            
+            @include mq-gen(max, w, xs) {
+                --top: 80%;
+                --left: 50%;
+                --padding-y: 1rem;
+                
+                width: 75%;
+                padding-block: var(--padding-y);
+                padding-top: var(--padding-y);
+                padding-bottom: var(--padding-y);
+                border-radius: 1rem;
+                position: absolute;
+                inset-block-start: var(--top);
+                top: var(--top);
+                inset-inline-start: var(--left);
+                left: var(--left);
+                z-index: 2;
+                @include translate-x(-50%);
+                @include flex-center-center(col);
+                gap: 1rem;
+                background-color: var(--main-900);
+                @include fade(hide);
+
+                &[data-toggler="open"] {
+                    --top: 115%;
+                    @include fade(show);
+                }
+            }
+
+            @include mq-gen(max, w, mob-wide) {
+                width: 90%;
+            }
+
+            ul {
+                @include flex-center-center;
+                gap: 1rem;
+
+                @include mq-gen(max, w, xs) {
+                    @include flex-dir(col);
+                }
+
+                li a {
+                    text-decoration: none;
+                    text-transform: capitalize;
+                    font-size: clamped(15px, 17px, 375px, 1400px);
+                    color: var(--white-100);
+                }
+            }
+        }
+    }
+}

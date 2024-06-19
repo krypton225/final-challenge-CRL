@@ -1,0 +1,16 @@
+.overlay {
+    --one-side: 0;
+
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: var(--one-side);
+    inset-block-start: var(--one-side);
+    right: var(--one-side);
+    inset-inline-end: var(--one-side);
+    bottom: var(--one-side);
+    inset-block-end: var(--one-side);
+    left: var(--one-side);
+    inset-inline-start: var(--one-side);
+    background-color: var(--overlay-bg);
+}
