@@ -11,6 +11,7 @@
     bottom: var(--one-side);
     inset-block-end: var(--one-side);
     left: var(--one-side);
+    z-index: 1;
     inset-inline-start: var(--one-side);
     background-color: var(--overlay-bg);
 }
