@@ -1,1 +1,3 @@
-import Navbar from "./Navbar";
+import "./Navbar";
+
+import "./IntroSection";

@@ -1,0 +1,44 @@
+@use "../../node_modules/sass-pire/src/sass-pire.scss" as *;
+
+.intro {
+    --height: 75dvh;
+
+    min-height: var(--height);
+    min-block-size: var(--height);
+    display: grid;
+    place-content: center;
+
+    @include mq-gen(max, w, sm-max) {
+        --height: 60dvh;
+    }
+
+    @include mq-gen(max, h, xs) {
+        --height: 78dvh;
+    }
+
+    &__content {
+        @include flex-between-end;
+        gap: 1rem;
+        color: var(--white-100);
+
+        @include mq-gen(max, w, sm-max) {
+            @include flex-wrap(wrap);
+            gap: 2rem;
+        }
+    }
+
+    &__title {
+        font-size: clamped(30px, 70px, 375px, 1200px);
+        line-height: 1.1;
+
+        &--inner {
+            color: var(--secondary-500);
+        }
+    }
+
+    &__end {
+        @include flex-fstart-fstart(col);
+        gap: 1rem;
+        font-size: clamped(16px, 18px, 375px, 1200px);
+    }
+}
