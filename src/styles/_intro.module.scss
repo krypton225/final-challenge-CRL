@@ -2,9 +2,13 @@
 
 .intro {
     --height: 75dvh;
+    --padding-y: clamp(7dvh, 8rem, 13dvh);
 
     min-height: var(--height);
     min-block-size: var(--height);
+    padding-block: var(--padding-y);
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
     display: grid;
     place-content: center;
 
