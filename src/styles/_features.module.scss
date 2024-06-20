@@ -1,0 +1,39 @@
+@use "../../node_modules/sass-pire/src/sass-pire.scss" as *;
+
+.features {
+    --padding-y: clamp(7dvh, 8rem, 10dvh);
+
+    padding-block: var(--padding-y);
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
+    background-color: var(--secondary-100);
+
+    &__content {
+        --gap: 1.5rem;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(px-to-rem(280), 1fr));
+        gap: var(--gap);
+
+        @include mq-gen(max, w, xs) {
+            gap: calc(var(--gap) + 1rem);
+        }
+    }
+
+    &__item {
+        @include flex-center-center(col);
+        gap: 1rem;
+    }
+
+    [data-style="feature-title-text"] {
+        font-size: clamped(20px, 22px, 375px, 1200px);
+        color: var(--secondary-500);
+    }
+
+    [data-style="feature-desc-text"] {
+        max-width: 80%;
+        text-align: center;
+        font-size: clamped(15px, 17px, 375px, 1200px);
+        color: var(-secondary--500);
+    }
+}
