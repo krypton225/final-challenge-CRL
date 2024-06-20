@@ -1,0 +1,71 @@
+@use "../../node_modules/sass-pire/src/sass-pire.scss" as *;
+
+.info {
+    --padding-y: clamp(7dvh, 7rem, 9dvh);
+
+    padding-block: var(--padding-y);
+    padding-top: var(--padding-y);
+    padding-bottom: var(--padding-y);
+
+    &-content {
+        --gap: 2rem;
+
+        @include flex-fstart-fstart;
+        gap: calc(var(--gap) + 5rem);
+
+        @include mq-gen(max, w, sm-wide) {
+            @include flex-wrap(yes);
+            gap: calc(var(--gap) + 1rem);
+        }
+
+        [data-style="info-start"] {
+            @include flex-center-center(col);
+            gap: var(--gap);
+        }
+
+        &__top {
+            @include flex-fstart-fstart(col);
+            gap: calc(var(--gap) - 1rem);
+        }
+    }
+
+    [data-style="info-content-title"] {
+        font-size: clamped(20px, 26px, 375px, 1200px);
+        color: var(--secondary-500);
+    }
+
+    [data-style="info-content-desc"] {
+        font-size: clamped(16px, 18px, 375px, 1200px);
+    }
+
+    &-end {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(px-to-rem(235), 1fr));
+        gap: var(--gap);
+    }
+
+    &-box {
+        --padding-y: 2rem;
+        --padding-x: 1.6rem;
+
+        padding-block: var(--padding-y);
+        padding-top: var(--padding-y);
+        padding-bottom: var(--padding-y);
+        padding-inline: var(--padding-x);
+        padding-right: var(--padding-x);
+        padding-left: var(--padding-x);
+        @include flex-center-center(col);
+        gap: 1rem;
+        text-align: center;
+        color: var(--white-100);
+
+        &__title {
+            font-size: clamped(16px, 22px, 375px, 1200px);
+            font-weight: 700;
+        }
+
+        &__desc {
+            font-size: clamped(14px, 17px, 375px, 1200px);
+        }
+    }
+}
