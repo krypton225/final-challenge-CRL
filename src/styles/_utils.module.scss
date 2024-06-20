@@ -21,6 +21,8 @@ body {
     /* #FFFFFF */
     --white-100: hsl(0, 0%, 100%);
 
+    /* #F1F0F0 */
+    --secondary-100: hsl(calc(var(--hue) - 225), calc(var(--saturation) - 4%), calc(var(--lightness) + 47%));
     /* #A59678 */
     --secondary-500: hsl(calc(var(--hue) - 185), calc(var(--saturation) + 13%), calc(var(--lightness) + 9%));
 
